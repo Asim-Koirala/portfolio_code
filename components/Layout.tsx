@@ -21,15 +21,30 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   // Scroll to top functionality moved to Navbar component
 
-  const showEmailSuccess = () => {
+  // These functions are passed to child components
+  const handleEmailSuccess = () => {
     setEmailSuccess(true);
     setTimeout(() => setEmailSuccess(false), 3000);
   };
 
-  const showEmailFailure = () => {
+  const handleEmailFailure = () => {
     setEmailFailure(true);
     setTimeout(() => setEmailFailure(false), 3000);
   };
+
+  // Set up event listeners for email events
+  useEffect(() => {
+    const handleEmailSuccessEvent = () => handleEmailSuccess();
+    const handleEmailErrorEvent = () => handleEmailFailure();
+    
+    window.addEventListener('emailSuccess', handleEmailSuccessEvent);
+    window.addEventListener('emailError', handleEmailErrorEvent);
+    
+    return () => {
+      window.removeEventListener('emailSuccess', handleEmailSuccessEvent);
+      window.removeEventListener('emailError', handleEmailErrorEvent);
+    };
+  }, []);
 
   return (
     <div className="font-serif w-full">

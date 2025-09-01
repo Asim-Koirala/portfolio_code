@@ -82,8 +82,8 @@ const Contact: React.FC = () => {
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-8 lg:p-12 bg-blue-700 text-white">
-              <h3 className="text-2xl font-bold mb-4">Let's Talk</h3>
-              <p className="mb-6 text-blue-100">I'm always happy to chat about design, collaboration, or anything else that sparks your interest.</p>
+              <h3 className="text-2xl font-bold mb-4">Let&apos;s Talk</h3>
+              <p className="mb-6 text-blue-100">I&apos;m always happy to chat about design, collaboration, or anything else that sparks your interest.</p>
               
               <div className="space-y-4">
                 <div className="flex items-center">

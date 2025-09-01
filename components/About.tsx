@@ -34,16 +34,16 @@ const About: React.FC = () => {
           <div className="w-full lg:w-7/12">
             <h3 className="text-2xl font-bold text-gray-800 mb-4">Web Developer & Designer</h3>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              I'm Asim Koirala, a developer who transforms ideas into digital experiences that drive business growth. Currently pursuing ACCA & BBS at Seed Financial Academy, I specialize in the MERN stack and React Native, delivering real solutions for real businesses.
+              I&apos;m Asim Koirala, a developer who transforms ideas into digital experiences that drive business growth. Currently pursuing ACCA & BBS at Seed Financial Academy, I specialize in the MERN stack and React Native, delivering real solutions for real businesses.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               My journey began during the COVID lockdown with curiosity-driven experimentation that evolved into professional expertise. Today, I build impactful projects like the White Feathers Jewellery ecommerce app — live on both App Store and Play Store — and design intelligent automation workflows as an Automation Engineer at Axone (UK).
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              My academic foundation from Cambridge International A Levels at St. Xavier's College (where I earned the Fr. Marshall D. Moran S.J. Award for Academic Excellence) instilled the discipline and problem-solving mindset that drives my development approach.
+              My academic foundation from Cambridge International A Levels at St. Xavier&apos;s College (where I earned the Fr. Marshall D. Moran S.J. Award for Academic Excellence) instilled the discipline and problem-solving mindset that drives my development approach.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              I'm always experimenting with emerging frameworks and pushing boundaries. Every project is an opportunity to learn, grow, and deliver something exceptional.
+              I&apos;m always experimenting with emerging frameworks and pushing boundaries. Every project is an opportunity to learn, grow, and deliver something exceptional.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-8 font-bold">
               Ready to bring your next idea to life?
@@ -81,7 +81,7 @@ const About: React.FC = () => {
                 </div>
                 
                 <div className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
-                  <h5 className="font-bold text-gray-800 mb-1">St. Xavier's College</h5>
+                  <h5 className="font-bold text-gray-800 mb-1">St. Xavier&apos;s College</h5>
                   <p className="text-gray-600 mb-2">Cambridge A Levels</p>
                   <div className="flex items-center text-blue-600">
                     <i className="fa-solid fa-calendar-alt mr-2"></i>
