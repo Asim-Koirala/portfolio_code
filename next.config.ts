@@ -9,7 +9,6 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizeCss: true, // Enable CSS optimization
-    optimizePackageImports: ['@tsparticles/react', '@tsparticles/slim'],
   },
 };
 

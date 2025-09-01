@@ -19,10 +19,10 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="flex space-x-4 mb-4 md:mb-0">
-            <a href="https://github.com/asimkoirala" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+            <a href="https://github.com/asim-koirala" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
               <i className="fab fa-github"></i>
             </a>
-            <a href="https://linkedin.com/in/asimkoirala" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/asim-koirala-0659212a6/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
               <i className="fab fa-linkedin-in"></i>
             </a>
             <a href="mailto:asimkoirala01@gmail.com" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">

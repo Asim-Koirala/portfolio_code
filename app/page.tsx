@@ -5,10 +5,10 @@ import dynamic from 'next/dynamic';
 // Use dynamic imports with loading priority
 const Layout = dynamic(() => import('../components/Layout'), { loading: () => <div className="min-h-screen"></div> });
 
-// Components with heavy animations or interactions should be lazy-loaded
+// Hero component
 const Hero = dynamic(() => import('../components/Hero'), { 
   loading: () => <div className="min-h-screen bg-gradient-to-r from-blue-900 to-blue-700"></div>,
-  ssr: false // Disable server-side rendering for the Hero component with particles
+  ssr: false // Disable server-side rendering for the Hero component
 });
 
 // Regular components

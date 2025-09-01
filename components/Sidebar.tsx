@@ -1,7 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
 interface SidebarProps {
   isOpen: boolean;
   toggleSidebar: () => void;
@@ -18,25 +16,62 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
 
   return (
     <div 
-      className={`w-56 h-full bg-slate-100 fixed ease-in duration-200 z-30 flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-56'}`}
+      className={`w-72 h-full bg-white bg-opacity-95 shadow-2xl fixed ease-in-out duration-300 z-30 flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-72'} backdrop-blur-sm bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmOGZhZmMiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00bTAtMTZjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00bTE2IDE2YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNG0tMTYgMTZjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00bTE2IDE2YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNG0tMTYtNDhjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00bTE2IDE2YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNG0tMTYgMTZjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00bTE2IDE2YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNG0tMTYtMTZjMC0yLjIgMS44LTQgNC00czQgMS44IDQgNC0xLjggNC00IDQtNC0xLjgtNC00Ii8+PC9nPjwvZz48L3N2Zz4=')] bg-fixed`}
     >
-      <div className="text-3xl pr-3 pt-3 flex justify-end">
-        <i className="fa-solid fa-xmark cursor-pointer h-8" onClick={toggleSidebar}></i>
+      <div className="flex justify-between items-center p-4 border-b border-gray-200">
+        <div className="text-2xl font-bold text-blue-700">Asim Koirala</div>
+        <button 
+          className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-blue-100 hover:text-blue-700 text-gray-600 transition-all duration-300 hover:rotate-90" 
+          onClick={toggleSidebar}
+        >
+          <i className="fa-solid fa-xmark text-lg"></i>
+        </button>
       </div>
 
-      <div className="w-full">
-        <ul>
-          <li className="text-3xl text-blue-500 px-10 py-5 hover:bg-slate-200 cursor-pointer w-full" 
-              onClick={() => scrollToSection('Home')}>Home</li>
-          <li className="text-3xl text-blue-500 px-10 py-5 hover:bg-slate-200 cursor-pointer" 
-              onClick={() => scrollToSection('AboutMe')}>About Me</li>
-          <li className="text-3xl text-blue-500 px-10 py-5 hover:bg-slate-200 cursor-pointer" 
-              onClick={() => scrollToSection('Skills')}>Skills</li>
-          <li className="text-3xl text-blue-500 px-10 py-5 hover:bg-slate-200 cursor-pointer" 
-              onClick={() => scrollToSection('Projects')}>Projects</li>
-          <li className="text-3xl text-blue-500 px-10 py-5 hover:bg-slate-200 cursor-pointer" 
-              onClick={() => scrollToSection('Contact')}>Contact</li>
+      <div className="w-full mt-6 flex-1">
+        <ul className="flex flex-col">
+          <li className="text-lg font-medium px-6 py-4 hover:bg-blue-50 hover:text-blue-700 transition-all duration-300 cursor-pointer border-l-4 border-transparent hover:border-blue-700 group text-gray-700" 
+              onClick={() => scrollToSection('Home')}>
+              <i className="fa-solid fa-house mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+              <span className="group-hover:translate-x-1 inline-block transition-transform duration-300">Home</span>
+          </li>
+          <li className="text-lg font-medium px-6 py-4 hover:bg-blue-50 hover:text-blue-700 transition-all duration-300 cursor-pointer border-l-4 border-transparent hover:border-blue-700 group text-gray-700" 
+              onClick={() => scrollToSection('About')}>
+              <i className="fa-solid fa-user mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+              <span className="group-hover:translate-x-1 inline-block transition-transform duration-300">About Me</span>
+          </li>
+          <li className="text-lg font-medium px-6 py-4 hover:bg-blue-50 hover:text-blue-700 transition-all duration-300 cursor-pointer border-l-4 border-transparent hover:border-blue-700 group text-gray-700" 
+              onClick={() => scrollToSection('Skills')}>
+              <i className="fa-solid fa-code mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+              <span className="group-hover:translate-x-1 inline-block transition-transform duration-300">Skills</span>
+          </li>
+          <li className="text-lg font-medium px-6 py-4 hover:bg-blue-50 hover:text-blue-700 transition-all duration-300 cursor-pointer border-l-4 border-transparent hover:border-blue-700 group text-gray-700" 
+              onClick={() => scrollToSection('Projects')}>
+              <i className="fa-solid fa-briefcase mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+              <span className="group-hover:translate-x-1 inline-block transition-transform duration-300">Projects</span>
+          </li>
+          <li className="text-lg font-medium px-6 py-4 hover:bg-blue-50 hover:text-blue-700 transition-all duration-300 cursor-pointer border-l-4 border-transparent hover:border-blue-700 group text-gray-700" 
+              onClick={() => scrollToSection('Contact')}>
+              <i className="fa-solid fa-envelope mr-3 group-hover:scale-110 transition-transform duration-300"></i>
+              <span className="group-hover:translate-x-1 inline-block transition-transform duration-300">Contact</span>
+          </li>
         </ul>
+      </div>
+      
+      {/* Social Links */}
+      <div className="mt-auto border-t border-gray-200 p-6">
+        <div className="flex justify-center space-x-4">
+          <a href="https://github.com/asim-koirala" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-blue-100 transition-colors duration-300">
+            <i className="fab fa-github text-blue-700"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/asim-koirala-0659212a6/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-blue-100 transition-colors duration-300">
+            <i className="fab fa-linkedin-in text-blue-700"></i>
+          </a>
+          <a href="mailto:asimkoirala01@gmail.com" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-blue-100 transition-colors duration-300">
+            <i className="fa fa-envelope text-blue-700"></i>
+          </a>
+        </div>
+        <p className="text-center text-gray-500 text-sm mt-4">© 2024 Asim Koirala</p>
       </div>
     </div>
   );

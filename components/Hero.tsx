@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
-import ParticlesComponent from './Particles';
+import { useState, useEffect } from 'react';
 
 const Hero: React.FC = () => {
   const [text, setText] = useState('');
@@ -29,11 +28,7 @@ const Hero: React.FC = () => {
     return () => { clearInterval(ticker) };
   }, [text, isDeleting, loopNum, typingSpeed, mounted]);
   
-  // Memoize the ParticlesComponent to prevent unnecessary re-renders
-  const MemoizedParticles = useCallback(() => {
-    if (!mounted) return null;
-    return <ParticlesComponent />;
-  }, [mounted]);
+  // No particles component anymore
 
   const tick = () => {
     const i = loopNum % roles.length;
@@ -63,7 +58,6 @@ const Hero: React.FC = () => {
   return (
     <div id="Home" className="bg-gradient-to-r from-blue-900 to-blue-700 min-h-screen w-full flex justify-center items-center overflow-hidden relative py-24">
       <div className="absolute inset-0 bg-[url('/img/grid.svg')] bg-center opacity-10"></div>
-      <MemoizedParticles />
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between z-10 relative">
         <div className="w-full md:w-1/2 flex flex-col justify-center text-white mb-10 md:mb-0">
           <span className="text-blue-300 font-medium text-lg mb-2">Hello, I am</span>

@@ -23,7 +23,7 @@ const About: React.FC = () => {
                   className="w-full h-auto rounded-lg"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-600 rounded-lg flex items-center justify-center z-20">
                 <span className="text-white font-bold">2+ Years Experience</span>
               </div>
             </div>
