@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
+import Head from 'next/head';
 
 // Use dynamic imports with loading priority
 const UtilityLayout = dynamic(() => import('../../../components/UtilityLayout'), {
@@ -106,9 +107,12 @@ export default function LicenseExam() {
         return (
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Welcome to Nepal License Trial Exam Preparation</h2>
+              <h1 className="text-3xl font-bold text-gray-800 mb-4">Nepal Driving License Exam Practice - Free Online Test 2025</h1>
+              <p className="text-gray-600 mb-4">
+                Prepare for your Nepal driving license trial exam with our comprehensive free online practice platform. Get ready for Category B (Car/Jeep) and Category K (Motorcycle) license tests with 500+ authentic questions.
+              </p>
               <p className="text-gray-600 mb-6">
-                This tool helps you prepare for the Nepali license trial written exam. Choose a category and mode below to get started:
+                <strong>✓ Free Practice Tests</strong> | <strong>✓ Instant Results</strong> | <strong>✓ Traffic Signal Questions</strong> | <strong>✓ Mock Exam Simulator</strong>
               </p>
               
               {/* Category Selection */}
@@ -183,10 +187,21 @@ export default function LicenseExam() {
               </div>
               
               <div className="mt-8 p-4 bg-gray-50 rounded-lg">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">About This Tool</h3>
+          <h2 className="text-xl font-bold text-gray-800 mb-3">About Nepal Driving License Trial Exam</h2>
           <p className="text-gray-600 mb-4">
-                  The Nepal License Trial Exam consists of 25 questions from different sections, with a passing score of 60 marks out of 100.
+                  The Nepal Department of Transport (DOT) driving license trial exam consists of 25 multiple-choice questions covering traffic rules, road signs, and vehicle safety. You need 60 marks out of 100 to pass the written test.
                 </p>
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold text-gray-700 mb-2">Why Choose Our Practice Platform?</h3>
+                  <ul className="list-disc pl-5 text-gray-600 text-sm space-y-1">
+                    <li><strong>500+ Updated Questions:</strong> Latest question bank for 2025 license exam</li>
+                    <li><strong>Category B & K Support:</strong> Practice for both car/jeep and motorcycle licenses</li>
+                    <li><strong>Traffic Signal Images:</strong> Visual questions with actual traffic signs used in Nepal</li>
+                    <li><strong>Instant Feedback:</strong> Know your answers immediately with detailed explanations</li>
+                    <li><strong>Mock Exam Mode:</strong> Simulate real exam conditions with 30-minute timer</li>
+                    <li><strong>Free Access:</strong> No registration or payment required</li>
+                  </ul>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <h4 className="font-medium text-gray-700 mb-1">Exam Structure:</h4>
@@ -207,6 +222,33 @@ export default function LicenseExam() {
                     </div>
                   </div>
                 </div>
+                
+                {/* FAQ Section for SEO */}
+                <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                  <h2 className="text-xl font-bold text-gray-800 mb-4">Frequently Asked Questions (FAQ)</h2>
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="font-semibold text-gray-700 mb-1">How many questions are in Nepal driving license exam?</h3>
+                      <p className="text-gray-600 text-sm">The Nepal driving license trial exam contains 25 multiple-choice questions covering traffic rules, road signs, vehicle safety, and environmental awareness.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-700 mb-1">What is the passing score for Nepal license exam?</h3>
+                      <p className="text-gray-600 text-sm">You need to score at least 60 marks out of 100 to pass the Nepal driving license written test.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-700 mb-1">What's the difference between Category B and Category K license?</h3>
+                      <p className="text-gray-600 text-sm">Category B is for cars and jeeps (4-wheelers), while Category K is for motorcycles and scooters (2-wheelers). Both have similar exam patterns but different vehicle-specific questions.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-700 mb-1">How long is the Nepal license exam?</h3>
+                      <p className="text-gray-600 text-sm">The official exam duration is 30 minutes for 25 questions. Our practice platform simulates the same time limit in exam mode.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-700 mb-1">Are traffic signal images included in the exam?</h3>
+                      <p className="text-gray-600 text-sm">Yes, questions 416-500 include traffic signal and road sign images. Our platform provides the same visual questions you'll see in the actual exam.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -214,13 +256,67 @@ export default function LicenseExam() {
     }
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Nepal Driving License Exam Practice",
+    "description": "Free online practice platform for Nepal driving license exam with comprehensive question bank for Category B and K licenses",
+    "url": "https://asimkoirala.com.np/utilities/license-exam",
+    "educationalCredentialAwarded": "Driving License Preparation",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "License Exam Courses",
+      "itemListElement": [
+        {
+          "@type": "Course",
+          "name": "Category B (Car/Jeep) License Exam",
+          "description": "Comprehensive practice for Category B driving license with 500+ questions",
+          "provider": {
+            "@type": "Organization",
+            "name": "Nepal License Exam Practice"
+          },
+          "educationalLevel": "Beginner",
+          "courseMode": "Online",
+          "isAccessibleForFree": true
+        },
+        {
+          "@type": "Course",
+          "name": "Category K (Motorcycle) License Exam",
+          "description": "Comprehensive practice for Category K motorcycle license with 500+ questions",
+          "provider": {
+            "@type": "Organization",
+            "name": "Nepal License Exam Practice"
+          },
+          "educationalLevel": "Beginner",
+          "courseMode": "Online",
+          "isAccessibleForFree": true
+        }
+      ]
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   return (
-    <UtilityLayout
-      title="Nepal License Trial Exam"
-      description="Prepare for your Nepali license trial written test with practice questions and mock exams."
-      onBack={currentMode === 'home' ? undefined : handleGoBack}
-    >
-      {renderContent()}
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData)
+          }}
+        />
+      </Head>
+      <UtilityLayout
+        title="Nepal License Trial Exam"
+        description="Prepare for your Nepali license trial written test with practice questions and mock exams."
+        onBack={currentMode === 'home' ? undefined : handleGoBack}
+      >
+        {renderContent()}
       
       {/* Category Selection Modal */}
       {showCategoryModal && (
@@ -255,6 +351,7 @@ export default function LicenseExam() {
           </div>
         </div>
       )}
-    </UtilityLayout>
+      </UtilityLayout>
+    </>
   );
 }

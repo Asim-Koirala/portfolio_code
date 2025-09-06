@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 const Footer: React.FC = () => {
-  const [currentYear, setCurrentYear] = useState(2024);
+  const [currentYear, setCurrentYear] = useState(2025);
   
   useEffect(() => {
     setCurrentYear(new Date().getFullYear());

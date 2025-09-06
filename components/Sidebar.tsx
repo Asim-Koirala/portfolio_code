@@ -87,7 +87,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
              <i className="fa fa-envelope text-blue-700"></i>
            </a>
         </div>
-        <p className="text-center text-gray-500 text-sm mt-4">© 2024 Asim Koirala</p>
+        <p className="text-center text-gray-500 text-sm mt-4">© 2025 Asim Koirala</p>
       </div>
     </div>
   );
