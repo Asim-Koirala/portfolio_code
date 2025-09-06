@@ -74,15 +74,15 @@ export default function LicenseExam() {
   };
 
   // Handle returning to home screen
-  const handleBackToHome = () => {
-    setCurrentMode('home');
-    setNavigationStack(['home']);
-  };
+  // Removed unused handleBackToHome function
 
   // Render different modes based on currentMode state
   const renderContent = () => {
     switch (currentMode) {
       case 'exam':
+        if (!category) {
+          return <div>Please select a category first.</div>;
+        }
         return (
           <ExamMode 
             category={category} 
@@ -90,6 +90,9 @@ export default function LicenseExam() {
           />
         );
       case 'practice':
+        if (!category) {
+          return <div>Please select a category first.</div>;
+        }
         return (
           <PracticeMode 
             category={category} 
@@ -97,6 +100,9 @@ export default function LicenseExam() {
           />
         );
       case 'flashcards':
+        if (!category) {
+          return <div>Please select a category first.</div>;
+        }
         return (
           <FlashcardsMode 
             category={category} 
@@ -181,7 +187,7 @@ export default function LicenseExam() {
             </div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Flashcards</h3>
             <p className="text-gray-600">
-                    Review questions one at a time with a "Flip for Answer" option for quick revision.
+                    Review questions one at a time with a &quot;Flip for Answer&quot; option for quick revision.
                   </p>
                 </div>
               </div>
@@ -236,7 +242,7 @@ export default function LicenseExam() {
                       <p className="text-gray-600 text-sm">You need to score at least 60 marks out of 100 to pass the Nepal driving license written test.</p>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-700 mb-1">What's the difference between Category B and Category K license?</h3>
+                      <h3 className="font-semibold text-gray-700 mb-1">What&apos;s the difference between Category B and Category K license?</h3>
                       <p className="text-gray-600 text-sm">Category B is for cars and jeeps (4-wheelers), while Category K is for motorcycles and scooters (2-wheelers). Both have similar exam patterns but different vehicle-specific questions.</p>
                     </div>
                     <div>
@@ -245,7 +251,7 @@ export default function LicenseExam() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-700 mb-1">Are traffic signal images included in the exam?</h3>
-                      <p className="text-gray-600 text-sm">Yes, questions 416-500 include traffic signal and road sign images. Our platform provides the same visual questions you'll see in the actual exam.</p>
+                      <p className="text-gray-600 text-sm">Yes, questions 416-500 include traffic signal and road sign images. Our platform provides the same visual questions you&apos;ll see in the actual exam.</p>
                     </div>
                   </div>
                 </div>

@@ -20,7 +20,7 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ category, onExit }) => {
   const [showNavigationPanel, setShowNavigationPanel] = useState(false);
   const [totalTime, setTotalTime] = useState(0);
   const [questionStartTime, setQuestionStartTime] = useState<number>(Date.now());
-  const [questionTimes, setQuestionTimes] = useState<{[key: number]: number}>({});
+  // Removed unused questionTimes state
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -80,7 +80,6 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ category, onExit }) => {
     setShowFeedback(false);
     setTotalTime(0);
     setQuestionStartTime(Date.now());
-    setQuestionTimes({});
   };
 
   const handleAnswerSelect = (questionId: number, selectedOption: number) => {
@@ -118,10 +117,7 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ category, onExit }) => {
       // Record time spent on current question
       const currentQuestion = selectedSection.questions[currentQuestionIndex];
       const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
-      setQuestionTimes(prev => ({
-        ...prev,
-        [currentQuestion.question_number]: timeSpent
-      }));
+      // Time tracking removed for simplification
       
       setCurrentQuestionIndex(prev => prev + 1);
       setShowFeedback(false);
@@ -134,10 +130,7 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ category, onExit }) => {
       const currentQuestion = selectedSection?.questions[currentQuestionIndex];
       if (currentQuestion) {
         const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
-        setQuestionTimes(prev => ({
-          ...prev,
-          [currentQuestion.question_number]: timeSpent
-        }));
+        // Time tracking removed for simplification
       }
       
       setCurrentQuestionIndex(prev => prev - 1);
@@ -171,10 +164,7 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ category, onExit }) => {
     const currentQuestion = selectedSection?.questions[currentQuestionIndex];
     if (currentQuestion) {
       const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
-      setQuestionTimes(prev => ({
-        ...prev,
-        [currentQuestion.question_number]: timeSpent
-      }));
+      // Time tracking removed for simplification
     }
     
     setCurrentQuestionIndex(questionIndex);
@@ -233,7 +223,7 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ category, onExit }) => {
         </div>
         
         <p className="mb-6 text-gray-600">
-          Select a section to practice questions from that section. You'll receive immediate feedback after answering each question.
+          Select a section to practice questions from that section. You&apos;ll receive immediate feedback after answering each question.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">

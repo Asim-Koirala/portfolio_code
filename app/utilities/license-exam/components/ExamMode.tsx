@@ -264,7 +264,7 @@ const ExamMode: React.FC<ExamModeProps> = ({ category, onExit, onComplete }) => 
     setTimeRemaining(examConfig.timeLimit * 60);
     setFlaggedQuestions(new Set());
     setExamResults(null);
-    setLanguage(null);
+    setLanguage('en');
   };
 
   // Handle proceed to instructions

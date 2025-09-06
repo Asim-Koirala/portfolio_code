@@ -44,12 +44,7 @@ Object.entries(unicodeToPreetiMap).forEach(([u, p]) => {
 });
 
 // --- Conjuncts ---
-const conjunctsUnicodeToPreeti: Record<string, string> = {
-  'त्र': 'q', 'क्ष': 'If', 'ज्ञ': '1', 'श्र': '>',
-  'क्र': 'qm', 'क्त': 'Qm', 'ट्ट': '§', 'ट्ठ': '¶',
-  'ठ्ठ': '7\\7', 'द्द': '2', 'द्ध': '4', 'द्य': 'B',
-  'द्व': '¢',
-};
+// Removed unused conjunctsUnicodeToPreeti mapping
 
 
 
@@ -67,7 +62,7 @@ export default function UnicodeConverter() {
           <div className="text-center py-16">
             <h2 className="text-3xl font-bold text-blue-800 mb-4">Coming Soon</h2>
             <p className="text-xl text-gray-600 mb-6">
-              We're working on improving our Nepali Unicode to Preeti converter.
+              We&apos;re working on improving our Nepali Unicode to Preeti converter.
             </p>
             <p className="text-lg text-gray-500">
               Thank you for your patience while we make this tool better for you.
