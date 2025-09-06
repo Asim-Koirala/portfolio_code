@@ -58,26 +58,28 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar }) => {
             <i className="fa-solid fa-bars"></i>
           </div>
           
-          <div className="text-2xl font-bold text-blue-700 h-full flex items-center cursor-pointer">
+          <div className="text-2xl font-bold text-blue-700 h-full flex items-center cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             Asim Koirala
           </div>
         </div>
         
-        <div id="expanded_navbar" className="hidden md:flex md:items-center md:justify-end">
+        <div id="expanded_navbar" className="hidden md:flex md:items-center md:justify-end md:gap-4">
           <ul className="flex items-center h-full space-x-1" id="navigation_items">
             <li className="text-gray-700 hover:text-blue-700 px-4 py-2 rounded-md cursor-pointer transition-colors font-medium" 
-                onClick={() => scrollToSection('Home')}>Home</li>
+                onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>Home</li>
             <li className="text-gray-700 hover:text-blue-700 px-4 py-2 rounded-md cursor-pointer transition-colors font-medium" 
                 onClick={() => scrollToSection('About')}>About Me</li>
             <li className="text-gray-700 hover:text-blue-700 px-4 py-2 rounded-md cursor-pointer transition-colors font-medium" 
                 onClick={() => scrollToSection('Skills')}>Skills</li>
             <li className="text-gray-700 hover:text-blue-700 px-4 py-2 rounded-md cursor-pointer transition-colors font-medium" 
                 onClick={() => scrollToSection('Projects')}>Projects</li>
+            <li className="text-gray-700 hover:text-blue-700 px-4 py-2 rounded-md cursor-pointer transition-colors font-medium" 
+                onClick={() => {window.location.href = '/utilities'}}>Utilities</li>
             <li className="text-gray-700 bg-blue-700 text-white hover:bg-blue-800 px-4 py-2 rounded-md cursor-pointer transition-colors font-medium" 
                 onClick={() => scrollToSection('Contact')}>Contact</li>
           </ul>
         </div>
-        <div className="" id="Home"></div>
+        {/* Removed Home ID from here as it should be in the Hero component */}
       </nav>
     </>
   );

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description: "Personal portfolio website of Asim Koirala - Developer, Designer, Student",
   keywords: ["portfolio", "developer", "designer", "student", "web development"],
   icons: {
-    icon: "/assets/profile_circle.png",
+    icon: "/favicon.ico",
     apple: "/assets/profile_circle.png",
   },
 };
@@ -33,9 +33,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3715894505703211" crossOrigin="anonymous"></script>
       </head>
       <body
-        className={`${poppins.variable} ${montserrat.variable} antialiased`}
+        className={`${poppins.variable} ${montserrat.variable} antialiased bg-white text-gray-900`}
       >
         {children}
       </body>
