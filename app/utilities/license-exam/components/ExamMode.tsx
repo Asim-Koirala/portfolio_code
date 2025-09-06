@@ -10,22 +10,23 @@ interface ExamModeProps {
   onComplete?: (results: { totalScore: number; totalMarks: number; userAnswers: UserAnswer[]; passed: boolean }) => void;
 }
 
+// Exam configuration - moved outside component to prevent re-creation
+const examConfig: ExamConfig = {
+  totalQuestions: 25,
+  totalMarks: 100,
+  timeLimit: 30, // 30 minutes
+  passingMarks: 60,
+  sectionDistribution: {
+    'Knowledge related to driving': 6,
+    'Knowledge related to vehicular act/regulation': 5,
+    'Technical or mechanical knowledge of vehicle': 3,
+    'Conceptual knowledge related to environment pollution': 2,
+    'Knowledge related to accidental awareness': 3,
+    'Knowledge related to traffic signals': 6
+  }
+};
+
 const ExamMode: React.FC<ExamModeProps> = ({ category, onExit, onComplete }) => {
-  // Exam configuration
-  const examConfig: ExamConfig = {
-    totalQuestions: 25,
-    totalMarks: 100,
-    timeLimit: 30, // 30 minutes
-    passingMarks: 60,
-    sectionDistribution: {
-      'Knowledge related to driving': 6,
-      'Knowledge related to vehicular act/regulation': 5,
-      'Technical or mechanical knowledge of vehicle': 3,
-      'Conceptual knowledge related to environment pollution': 2,
-      'Knowledge related to accidental awareness': 3,
-      'Knowledge related to traffic signals': 6
-    }
-  };
 
   // State variables
   const [language, setLanguage] = useState<'en' | 'ne'>('en');
