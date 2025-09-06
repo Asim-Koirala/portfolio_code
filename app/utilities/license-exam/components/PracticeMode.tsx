@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Section, Question, UserAnswer } from '../types';
 
 interface PracticeModeProps {
@@ -114,9 +115,6 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ category, onExit }) => {
 
   const handleNextQuestion = () => {
     if (selectedSection && currentQuestionIndex < selectedSection.questions.length - 1) {
-      // Record time spent on current question
-      const currentQuestion = selectedSection.questions[currentQuestionIndex];
-      const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
       // Time tracking removed for simplification
       
       setCurrentQuestionIndex(prev => prev + 1);
@@ -126,12 +124,7 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ category, onExit }) => {
 
   const handlePrevQuestion = () => {
     if (currentQuestionIndex > 0) {
-      // Record time spent on current question
-      const currentQuestion = selectedSection?.questions[currentQuestionIndex];
-      if (currentQuestion) {
-        const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
-        // Time tracking removed for simplification
-      }
+      // Time tracking removed for simplification
       
       setCurrentQuestionIndex(prev => prev - 1);
       setShowFeedback(false);
@@ -161,11 +154,7 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ category, onExit }) => {
 
   const handleQuestionJump = (questionIndex: number) => {
     // Record time spent on current question
-    const currentQuestion = selectedSection?.questions[currentQuestionIndex];
-    if (currentQuestion) {
-      const timeSpent = Math.floor((Date.now() - questionStartTime) / 1000);
-      // Time tracking removed for simplification
-    }
+    // Time tracking removed for simplification
     
     setCurrentQuestionIndex(questionIndex);
     setShowFeedback(false);
@@ -332,9 +321,11 @@ const PracticeMode: React.FC<PracticeModeProps> = ({ category, onExit }) => {
         {/* Traffic Symbol Image for questions 416-500 */}
         {currentQuestion.question_number >= 416 && currentQuestion.question_number <= 500 && (
           <div className="mb-4 flex justify-center">
-            <img 
+            <Image 
               src={`/assets/icons/B${currentQuestion.question_number}.png`}
               alt={`Traffic symbol for question ${currentQuestion.question_number}`}
+              width={300}
+              height={192}
               className="max-w-xs max-h-48 object-contain border border-gray-300 rounded-lg shadow-sm"
               onError={(e) => {
                 console.warn(`Image not found: B${currentQuestion.question_number}.png`);

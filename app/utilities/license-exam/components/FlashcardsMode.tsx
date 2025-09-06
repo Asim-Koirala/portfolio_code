@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Section, Question } from '../types';
 
 interface FlashcardsModeProps {
@@ -133,9 +134,7 @@ const FlashcardsMode: React.FC<FlashcardsModeProps> = ({ category, onExit }) => 
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const getCurrentCardTime = (): number => {
-    return Math.floor((Date.now() - cardStartTime) / 1000);
-  };
+  // getCurrentCardTime function removed as it was unused
 
   const getAverageTimePerCard = (): number => {
     const completedTimes = cardTimes.filter(time => time > 0);
@@ -328,9 +327,11 @@ const FlashcardsMode: React.FC<FlashcardsModeProps> = ({ category, onExit }) => 
               {/* Traffic Symbol Image for questions 416-500 */}
               {currentQuestion.question_number >= 416 && currentQuestion.question_number <= 500 && (
                 <div className="mb-4 flex justify-center">
-                  <img 
+                  <Image 
                     src={`/assets/icons/B${currentQuestion.question_number}.png`}
                     alt={`Traffic symbol for question ${currentQuestion.question_number}`}
+                    width={200}
+                    height={150}
                     className="max-w-[200px] max-h-[150px] object-contain rounded-lg shadow-sm"
                     onError={(e) => {
                       console.warn(`Image not found: B${currentQuestion.question_number}.png`);

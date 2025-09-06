@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { Question, QuestionData, UserAnswer, ExamConfig } from '../types';
 
 interface ExamModeProps {
@@ -121,7 +122,7 @@ const ExamMode: React.FC<ExamModeProps> = ({ category, onExit, onComplete }) => 
     };
     
     loadQuestions();
-  }, [category, language]);
+  }, [category, language, examConfig.sectionDistribution, examConfig.totalQuestions]);
 
   // Complete the exam
   const handleExamComplete = useCallback(() => {
@@ -679,9 +680,11 @@ const ExamMode: React.FC<ExamModeProps> = ({ category, onExit, onComplete }) => 
         {/* Traffic Symbol Image for questions 416-500 */}
         {currentQuestion && currentQuestion.question_number >= 416 && currentQuestion.question_number <= 500 && (
           <div className="mb-4 flex justify-center">
-            <img 
+            <Image 
               src={`/assets/icons/B${currentQuestion.question_number}.png`}
               alt={`Traffic symbol for question ${currentQuestion.question_number}`}
+              width={300}
+              height={192}
               className="max-w-xs max-h-48 object-contain border border-gray-300 rounded-lg shadow-sm"
               onError={(e) => {
                 console.warn(`Image not found: B${currentQuestion.question_number}.png`);
@@ -902,9 +905,11 @@ const ExamMode: React.FC<ExamModeProps> = ({ category, onExit, onComplete }) => 
                       {/* Traffic Symbol Image for questions 416-500 */}
                       {question.question_number >= 416 && question.question_number <= 500 && (
                         <div className="mb-2 flex justify-center">
-                          <img 
+                          <Image 
                             src={`/assets/icons/B${question.question_number}.png`}
                             alt={`Traffic symbol for question ${question.question_number}`}
+                            width={150}
+                            height={96}
                             className="max-w-[150px] max-h-24 print:max-w-[100px] print:max-h-16 object-contain border border-gray-300 rounded shadow-sm"
                             onError={(e) => {
                               console.warn(`Image not found: B${question.question_number}.png`);
@@ -1174,9 +1179,11 @@ const ExamMode: React.FC<ExamModeProps> = ({ category, onExit, onComplete }) => 
             {/* Traffic Symbol Image for questions 416-500 */}
             {questions[selectedQuestionForModal].question_number >= 416 && questions[selectedQuestionForModal].question_number <= 500 && (
               <div className="mb-4 flex justify-center">
-                <img 
+                <Image 
                   src={`/assets/icons/B${questions[selectedQuestionForModal].question_number}.png`}
                   alt={`Traffic symbol for question ${questions[selectedQuestionForModal].question_number}`}
+                  width={300}
+                  height={192}
                   className="max-w-xs max-h-48 object-contain border border-gray-300 rounded-lg shadow-sm"
                   onError={(e) => {
                     console.warn(`Image not found: B${questions[selectedQuestionForModal].question_number}.png`);
