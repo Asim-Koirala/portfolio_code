@@ -14,7 +14,7 @@ Disallow: /admin/
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://asimkoirala.com.np/sitemap.xml
 
 # Additional directives for better SEO
 User-agent: Googlebot
