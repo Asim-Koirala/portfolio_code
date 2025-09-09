@@ -34,6 +34,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3715894505703211" crossOrigin="anonymous"></script>
+        <meta name="google-adsense-account" content="ca-pub-3715894505703211"></meta>
       </head>
       <body
         className={`${poppins.variable} ${montserrat.variable} antialiased bg-white text-gray-900`}
