@@ -387,11 +387,53 @@ export default function ADBSConverter() {
   
 
 
+  // Structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AD to BS Converter",
+    "description": "Free online tool to convert dates between Gregorian (AD) and Bikram Sambat (BS) calendar systems. Accurate Nepali date conversion with calendar view.",
+    "url": "https://asimkoirala.com.np/utilities/adbs-converter",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Asim Koirala",
+      "url": "https://asimkoirala.com.np"
+    },
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0],
+    "inLanguage": ["en", "ne"],
+    "keywords": "AD to BS converter, Nepali date converter, Bikram Sambat, calendar conversion, Nepal calendar",
+    "featureList": [
+      "Convert AD to BS dates",
+      "Convert BS to AD dates",
+      "Interactive calendar view",
+      "Support for years 1943-2033",
+      "Bilingual month names",
+      "Free to use"
+    ]
+  };
+
   return (
-    <UtilityLayout 
-      title="Date Converter"
-      description="Convert between Gregorian (AD) and Nepali (BS) calendar dates."
-    >
+    <>
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+      
+      <UtilityLayout 
+        title="AD to BS Date Converter - Free Nepali Calendar Tool"
+        description="Convert dates between Gregorian (AD) and Bikram Sambat (BS) calendar systems. Free online tool with accurate conversion and interactive calendar view for Nepal dates."
+      >
       <div className="max-w-4xl mx-auto">
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
           {/* Conversion Mode Toggle */}
@@ -765,8 +807,41 @@ export default function ADBSConverter() {
               The Nepali new year begins in mid-April (around the 13th-14th) of the Gregorian calendar.
             </p>
           </div>
+
+          {/* Features Section */}
+          <div className="bg-blue-50 p-4 rounded-md mt-6">
+            <h3 className="text-lg font-medium text-blue-800 mb-3">Key Features</h3>
+            <ul className="text-blue-700 space-y-2">
+              <li className="flex items-center"><span className="mr-2">✓</span> Accurate AD to BS date conversion</li>
+              <li className="flex items-center"><span className="mr-2">✓</span> BS to AD date conversion</li>
+              <li className="flex items-center"><span className="mr-2">✓</span> Interactive calendar view</li>
+              <li className="flex items-center"><span className="mr-2">✓</span> Support for years 1943-2033 AD (2000-2090 BS)</li>
+              <li className="flex items-center"><span className="mr-2">✓</span> Bilingual month names (English/Nepali)</li>
+              <li className="flex items-center"><span className="mr-2">✓</span> Free to use, no registration required</li>
+            </ul>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="bg-green-50 p-4 rounded-md mt-6">
+            <h3 className="text-lg font-medium text-green-800 mb-3">Frequently Asked Questions</h3>
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-medium text-green-700 mb-1">What is Bikram Sambat (BS)?</h4>
+                <p className="text-green-600 text-sm">Bikram Sambat is the official calendar system of Nepal, named after King Vikramaditya. It's a lunar calendar that's approximately 56-57 years ahead of the Gregorian calendar.</p>
+              </div>
+              <div>
+                <h4 className="font-medium text-green-700 mb-1">How accurate is this converter?</h4>
+                <p className="text-green-600 text-sm">Our converter uses the official conversion algorithms and is accurate for dates between 1943-2033 AD (2000-2090 BS).</p>
+              </div>
+              <div>
+                <h4 className="font-medium text-green-700 mb-1">Can I use this for official purposes?</h4>
+                <p className="text-green-600 text-sm">While our converter is highly accurate, we recommend verifying important dates with official sources for legal or administrative purposes.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </UtilityLayout>
+    </>
   );
 }

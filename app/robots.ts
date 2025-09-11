@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://asimkoirala.com.np' // Replace with your actual domain
+  const baseUrl = 'https://www.asimkoirala.com.np' // Replace with your actual domain
 
   return {
     rules: [

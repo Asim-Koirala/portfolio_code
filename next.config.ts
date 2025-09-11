@@ -9,6 +9,21 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true, // Enable CSS optimization
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'asimkoirala.com.np',
+          },
+        ],
+        destination: 'https://www.asimkoirala.com.np/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Utilities | Asim Koirala",
   description: "Useful utilities like AD to BS converter, Nepali Unicode converter, and more",
   keywords: ["utilities", "AD to BS converter", "Nepali Unicode converter", "Romanized Nepali"],
+  alternates: {
+    canonical: "https://www.asimkoirala.com.np/utilities",
+  },
 };
 
 export default function UtilitiesLayout({

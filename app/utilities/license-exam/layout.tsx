@@ -40,6 +40,9 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1
     }
+  },
+  alternates: {
+    canonical: "https://www.asimkoirala.com.np/utilities/license-exam",
   }
 };
 
